@@ -2,7 +2,7 @@ import luigi
 import pandas as pd
 import snowflake.connector
 import os
-
+import dask
 class ExtractData(luigi.Task):
     def output(self):
         return [luigi.LocalTarget(f"data_{month}.csv") for month in ["jan", "june", "july", "august"]]
